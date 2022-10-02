@@ -16,10 +16,12 @@ export const getTask: RequestHandler = async (req, res, next) => {
 
 // Add A Rant
 export const addTask: RequestHandler = async (req, res, next) => {
-  let newTask: Tasks = req.body;
+  let taskInfo = req.body;
 
-  if (newTask.taskTitle) {
-    let created = await Tasks.create(newTask);
+  console.log(taskInfo);
+
+  if (taskInfo) {
+    let created = await Tasks.create(taskInfo);
     res.status(201).json(created);
   } else {
     res.status(400).send();

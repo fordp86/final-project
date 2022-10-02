@@ -20,10 +20,11 @@ function TaskFactory(sequelize) {
         completed: {
             type: sequelize_1.DataTypes.BOOLEAN,
             allowNull: false,
+            defaultValue: false,
         },
         createdAt: {
             type: sequelize_1.DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             defaultValue: sequelize_1.DataTypes.NOW,
         },
         updatedAt: {

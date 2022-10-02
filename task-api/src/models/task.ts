@@ -33,10 +33,11 @@ export function TaskFactory(sequelize: Sequelize) {
       completed: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
+        defaultValue: false,
       },
       createdAt: {
         type: DataTypes.DATE,
-        allowNull: false,
+        allowNull: true,
         defaultValue: DataTypes.NOW,
       },
       updatedAt: {

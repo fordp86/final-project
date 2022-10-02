@@ -17,9 +17,10 @@ const getTask = async (req, res, next) => {
 exports.getTask = getTask;
 // Add A Rant
 const addTask = async (req, res, next) => {
-    let newTask = req.body;
-    if (newTask.taskTitle) {
-        let created = await task_1.Tasks.create(newTask);
+    let taskInfo = req.body;
+    console.log(taskInfo);
+    if (taskInfo) {
+        let created = await task_1.Tasks.create(taskInfo);
         res.status(201).json(created);
     }
     else {
